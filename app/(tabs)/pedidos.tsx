@@ -12,26 +12,32 @@ export default function PedidosScreen() {
   // 2. 'items' para la cantidad de productos (inicializado en 0)
   // const [total, setTotal] = useState(0);
   // const [items, setItems] = useState(0);
-
+  const [total, setTotal] = useState(0);
+  const [items, setItems] = useState(0);
   // TODO [RETO 04 - PASO 2]: Programa las funciones de suma directa al total y conteo de items:
   const agregarSanduche = () => {
     // TODO: Sumar 1 a items y sumar 1.25 al total
+    setTotal(total + 1.25);
+    setItems(items + 1);
   };
 
   const agregarEmpanada = () => {
     // TODO: Sumar 1 a items y sumar 0.75 al total
+    setTotal(total + 0.75);
+    setItems(items + 1);
   };
 
   const agregarJugo = () => {
     // TODO: Sumar 1 a items y sumar 0.80 al total
+    setTotal(total + 0.80);
+    setItems(items + 1);
   };
 
   const vaciarCarrito = () => {
     // TODO: Reiniciar total e items a 0
+    setTotal(0);
+    setItems(0);
   };
-
-  const total = 0; // TODO: Conectar con tu estado useState 'total'
-  const items = 0; // TODO: Conectar con tu estado useState 'items'
   const tieneDescuento = total >= 5.0;
 
   return (
@@ -58,7 +64,7 @@ export default function PedidosScreen() {
           variante="yellow"
         >
           <Text className="text-xs font-bold text-black leading-relaxed mb-3">
-            <b>Misión:</b> Abre este archivo (<Text className="font-mono text-blue-700 font-bold">app/(tabs)/pedidos.tsx</Text>). Declara dos estados con <Text className="font-mono text-pink-700 font-bold">useState(0)</Text>: <Text className="font-mono font-bold">[total, setTotal]</Text> y <Text className="font-mono font-bold">[items, setItems]</Text>.
+            <Text>Misión:</Text> Abre este archivo (<Text className="font-mono text-blue-700 font-bold">app/(tabs)/pedidos.tsx</Text>). Declara dos estados con <Text className="font-mono text-pink-700 font-bold">useState(0)</Text>: <Text className="font-mono font-bold">[total, setTotal]</Text> y <Text className="font-mono font-bold">[items, setItems]</Text>.
           </Text>
           <View className="bg-white/80 p-3 rounded-lg border-2 border-black gap-1.5">
             <Text className="font-extrabold text-xs text-black">🔍 Verificación del Reto:</Text>
