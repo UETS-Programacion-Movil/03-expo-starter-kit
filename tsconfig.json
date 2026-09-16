@@ -18,8 +18,8 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
-    "src/**/*",
-    "tests/**/*",
+    "**/*.ts",
+    "**/*.tsx",
     "nativewind-env.d.ts"
   ],
   "exclude": [
