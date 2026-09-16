@@ -1,15 +1,15 @@
 {
   "expo": {
-    "name": "",
-    "slug": "",
+    "name": "Bar Don Bosco",  
+    "slug": "bar-don-bosco",
     "version": "1.0.0",
-    "orientation": "default",
+    "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "",
+    "scheme": "barsalesiano",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/images/splash-icon.png",
+      "image": "./assets/images/barsalesiano.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
