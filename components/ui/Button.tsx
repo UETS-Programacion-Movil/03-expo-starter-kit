@@ -20,6 +20,10 @@ export interface ButtonProps extends TouchableOpacityProps {
 // - success: 'bg-emerald-300 text-black'
 export const variantStyles: Record<string, string> = {
   // TODO: Agrega aquí las 4 variantes de color de la UETS
+  primary: 'bg-yellow-300 text-black',
+  secondary: 'bg-cyan-300 text-black',
+  danger: 'bg-pink-400 text-black',
+  success: 'bg-emerald-300 text-black',
 };
 
 export const Button: React.FC<ButtonProps> = ({
