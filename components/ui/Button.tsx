@@ -1,11 +1,11 @@
 import React from 'react';
 import { TouchableOpacity, Text, TouchableOpacityProps } from 'react-native';
 
-// TODO [RETO 02 - PASO 1]: Define el tipo ButtonVariant con los 4 colores de la UETS:
+// CHECK [RETO 02 - PASO 1]: Define el tipo ButtonVariant con los 4 colores de la UETS:
 // 'primary' | 'secondary' | 'danger' | 'success'
-export type ButtonVariant = 'primary'; // TODO: Reemplaza con la unión de las 4 variantes
+export type ButtonVariant = 'primary' | 'secondary' | 'danger' | 'success';
 
-// TODO [RETO 02 - PASO 2]: Extiende la interfaz ButtonProps con label, variante y onPress usando TouchableOpacityProps
+// CHECK [RETO 02 - PASO 2]: Extiende la interfaz ButtonProps con label, variante y onPress usando TouchableOpacityProps
 export interface ButtonProps extends TouchableOpacityProps {
   label: string;
   variante?: ButtonVariant;
@@ -13,13 +13,16 @@ export interface ButtonProps extends TouchableOpacityProps {
   onPress?: () => void;
 }
 
-// TODO [RETO 02 - PASO 3]: Mapea cada variante con sus clases de Tailwind en variantStyles:
+// CHECK [RETO 02 - PASO 3]: Mapea cada variante con sus clases de Tailwind en variantStyles:
 // - primary: 'bg-yellow-300 text-black'
 // - secondary: 'bg-cyan-300 text-black'
 // - danger: 'bg-pink-400 text-black'
 // - success: 'bg-emerald-300 text-black'
 export const variantStyles: Record<string, string> = {
-  // TODO: Agrega aquí las 4 variantes de color de la UETS
+  primary: 'bg-yellow-300 text-black',
+  secondary: 'bg-cyan-300 text-black',
+  danger: 'bg-pink-400 text-black',
+  success: 'bg-emerald-300 text-black',
 };
 
 export const Button: React.FC<ButtonProps> = ({

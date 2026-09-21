@@ -7,31 +7,37 @@ import { Badge } from '../../components/ui/Badge';
 import { Button } from '../../components/ui/Button';
 
 export default function PedidosScreen() {
-  // TODO [RETO 04 - PASO 1]: Declara dos estados simples usando useState:
+  // CHECK [RETO 04 - PASO 1]: Declara dos estados simples usando useState:
   // 1. 'total' para el dinero acumulado (inicializado en 0)
   // 2. 'items' para la cantidad de productos (inicializado en 0)
-  // const [total, setTotal] = useState(0);
-  // const [items, setItems] = useState(0);
+  const [total, setTotal] = useState(0);
+  const [items, setItems] = useState(0);
 
-  // TODO [RETO 04 - PASO 2]: Programa las funciones de suma directa al total y conteo de items:
+  // CHECK [RETO 04 - PASO 2]: Programa las funciones de suma directa al total y conteo de items:
   const agregarSanduche = () => {
-    // TODO: Sumar 1 a items y sumar 1.25 al total
+    // CHECK: Sumar 1 a items y sumar 1.25 al total
+    setItems(items + 1);
+    setTotal(total + 1.25);
   };
 
   const agregarEmpanada = () => {
-    // TODO: Sumar 1 a items y sumar 0.75 al total
+    // CHECK: Sumar 1 a items y sumar 0.75 al total
+    setItems(items + 1);
+    setTotal(total + 0.75);
   };
 
   const agregarJugo = () => {
-    // TODO: Sumar 1 a items y sumar 0.80 al total
+    // CHECK: Sumar 1 a items y sumar 0.80 al total
+    setItems(items + 1);
+    setTotal(total + 0.80);
   };
 
   const vaciarCarrito = () => {
-    // TODO: Reiniciar total e items a 0
+    // CHECK: Reiniciar total e items a 0
+    setTotal(0);
+    setItems(0);
   };
 
-  const total = 0; // TODO: Conectar con tu estado useState 'total'
-  const items = 0; // TODO: Conectar con tu estado useState 'items'
   const tieneDescuento = total >= 5.0;
 
   return (
@@ -152,9 +158,10 @@ export default function PedidosScreen() {
             <Text className="font-extrabold text-xs text-black">Total Productos:</Text>
             <Text className="font-bold text-xs text-black">{items} unidad(es)</Text>
           </View>
+
           <View className="flex-row justify-between border-t-2 border-black/20 pt-2 mb-2">
             <Text className="font-black text-sm text-black uppercase">Total a Pagar:</Text>
-            <Text className="font-black text-sm text-black">${total}</Text>
+            <Text className="font-black text-sm text-black">${total.toFixed(2)}</Text>
           </View>
 
           {tieneDescuento && (
@@ -171,8 +178,9 @@ export default function PedidosScreen() {
               label={items > 0 ? "Confirmar Pedido Móvil" : "Selecciona Productos"}
               variante={items > 0 ? "success" : "secondary"}
               disabled={items === 0}
-              onPress={() => Alert.alert("Bar Salesiano", `¡Pedido confirmado por $${total}! Retíralo en el Bar Salesiano.`)}
+              onPress={() => Alert.alert("Bar Salesiano", `¡Pedido confirmado por $${total.toFixed(2)}! Retíralo en el Bar Salesiano.`)}
             />
+
             {items > 0 && (
               <Button
                 label="Vaciar Carrito"
