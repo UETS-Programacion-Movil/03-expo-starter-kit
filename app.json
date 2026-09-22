@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "barsalesiano",
+    "scheme": "bibliotecadb",
     "userInterfaceStyle": "light",
     "ios": {
       "supportsTablet": true
@@ -28,7 +28,7 @@
         {
           "image": "./assets/images/splash-icon.png",
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#FDE047"
         }
       ]
     ],
