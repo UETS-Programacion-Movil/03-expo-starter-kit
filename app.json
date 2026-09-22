@@ -1,11 +1,15 @@
 {
   "expo": {
-    "name": "",
-    "slug": "",
+    "name": "BarSalesiano",
+    "slug": "BarSalesiano",
     "version": "1.0.0",
-    "orientation": "default",
+    "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "",
+    "scheme": "BarSalesiano",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "backgroundColor": "#FDE047"
+    },
     "userInterfaceStyle": "light",
     "ios": {
       "supportsTablet": true
