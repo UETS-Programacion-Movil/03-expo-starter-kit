@@ -18,8 +18,6 @@ export default function TunnelScreen() {
         setTunelActivo(!tunelActivo);
   };
 
-  const tunelActivo = false; // TODO: Conectar con tu estado reactivo useState
-
   return (
     <SafeAreaView className="flex-1 bg-[#FFFDF9]" edges={['top', 'left', 'right']}>
       <ScrollView className="flex-1" contentContainerClassName="px-5 pt-4 pb-36">
