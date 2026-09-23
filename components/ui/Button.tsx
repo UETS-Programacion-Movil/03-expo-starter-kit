@@ -1,11 +1,10 @@
 import React from 'react';
 import { TouchableOpacity, Text, TouchableOpacityProps } from 'react-native';
 
-// TODO [RETO 02 - PASO 1]: Define el tipo ButtonVariant con los 4 colores de la UETS:
-// 'primary' | 'secondary' | 'danger' | 'success'
-export type ButtonVariant = 'primary'; // TODO: Reemplaza con la unión de las 4 variantes
+// PASO 1: Define el tipo unión ButtonVariant con los 4 colores requeridos
+export type ButtonVariant = 'primary' | 'secondary' | 'danger' | 'success';
 
-// TODO [RETO 02 - PASO 2]: Extiende la interfaz ButtonProps con label, variante y onPress usando TouchableOpacityProps
+// PASO 2: Asegura que ButtonProps extienda de TouchableOpacityProps
 export interface ButtonProps extends TouchableOpacityProps {
   label: string;
   variante?: ButtonVariant;
@@ -13,13 +12,12 @@ export interface ButtonProps extends TouchableOpacityProps {
   onPress?: () => void;
 }
 
-// TODO [RETO 02 - PASO 3]: Mapea cada variante con sus clases de Tailwind en variantStyles:
-// - primary: 'bg-yellow-300 text-black'
-// - secondary: 'bg-cyan-300 text-black'
-// - danger: 'bg-pink-400 text-black'
-// - success: 'bg-emerald-300 text-black'
-export const variantStyles: Record<string, string> = {
-  // TODO: Agrega aquí las 4 variantes de color de la UETS
+// PASO 3: Mapea cada variante con sus clases de Tailwind correspondiente
+export const variantStyles: Record<ButtonVariant, string> = {
+  primary: 'bg-yellow-300 text-black',
+  secondary: 'bg-cyan-300 text-black',
+  danger: 'bg-pink-400 text-black',
+  success: 'bg-emerald-300 text-black',
 };
 
 export const Button: React.FC<ButtonProps> = ({
@@ -37,7 +35,7 @@ export const Button: React.FC<ButtonProps> = ({
       activeOpacity={0.7}
       onPress={onPress}
       disabled={disabled}
-      className={`border-[3px] border-black rounded-lg py-3 px-5 items-center justify-center shadow-[3px_3px_0px_0px_#000000] ${currentVariant} ${
+      className={`border-[3px] border-black rounded-lg py-3 px-5 items-center justify-center ${currentVariant} ${
         disabled ? 'opacity-50' : ''
       } ${className}`}
       {...props}
