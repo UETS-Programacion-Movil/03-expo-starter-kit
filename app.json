@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "",
-    "slug": "",
+    "name": "Biblioteca Don Bosco",
+    "slug": "biblioteca-don-bosco",
     "version": "1.0.0",
-    "orientation": "default",
+    "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "",
+    "scheme": "bibliotecadb",
     "userInterfaceStyle": "light",
     "ios": {
       "supportsTablet": true
@@ -13,7 +13,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/android-icon-foreground.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#FDE047"
       }
     },
     "web": {
