@@ -1,12 +1,19 @@
 {
   "expo": {
-    "name": "",
-    "slug": "",
+    "name": "Expo Starter Kit",
+    "slug": "expo-starter-kit",
     "version": "1.0.0",
-    "orientation": "default",
+    "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "",
+    "scheme": "uetsapp",
     "userInterfaceStyle": "light",
+    "splash":{
+      "image": "./assets/images/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },  
+
+
     "ios": {
       "supportsTablet": true
     },

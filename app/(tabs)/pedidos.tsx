@@ -7,31 +7,31 @@ import { Badge } from '../../components/ui/Badge';
 import { Button } from '../../components/ui/Button';
 
 export default function PedidosScreen() {
-  // TODO [RETO 04 - PASO 1]: Declara dos estados simples usando useState:
-  // 1. 'total' para el dinero acumulado (inicializado en 0)
-  // 2. 'items' para la cantidad de productos (inicializado en 0)
-  // const [total, setTotal] = useState(0);
-  // const [items, setItems] = useState(0);
+  const [total, setTotal] = useState(0);
+  const [items, setItems] = useState(0);
 
   // TODO [RETO 04 - PASO 2]: Programa las funciones de suma directa al total y conteo de items:
   const agregarSanduche = () => {
-    // TODO: Sumar 1 a items y sumar 1.25 al total
+    setItems((prevItems)=> prevItems + 1);
+    setTotal((prevTotal)=>Number((prevTotal + 1.25).toFixed(2)));
   };
 
   const agregarEmpanada = () => {
-    // TODO: Sumar 1 a items y sumar 0.75 al total
+    setItems((prevItems)=> prevItems + 1);
+    setTotal((prevTotal)=>Number((prevTotal + 0.75).toFixed(2)));
   };
 
   const agregarJugo = () => {
-    // TODO: Sumar 1 a items y sumar 0.80 al total
+    setItems((prevItems)=> prevItems + 1);
+    setTotal((prevTotal)=>Number((prevTotal + 0.80).toFixed(2)));
   };
 
   const vaciarCarrito = () => {
-    // TODO: Reiniciar total e items a 0
+    setTotal(0);
+    setItems(0);
   };
 
-  const total = 0; // TODO: Conectar con tu estado useState 'total'
-  const items = 0; // TODO: Conectar con tu estado useState 'items'
+  
   const tieneDescuento = total >= 5.0;
 
   return (
