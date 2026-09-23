@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "",
-    "slug": "",
+    "name": "Expo Starter Kit",
+    "slug": "expo-starter-kit",
     "version": "1.0.0",
-    "orientation": "default",
+    "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "",
+    "scheme": "expo-starter-kit",
     "userInterfaceStyle": "light",
     "ios": {
       "supportsTablet": true
