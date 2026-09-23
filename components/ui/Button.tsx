@@ -9,7 +9,7 @@ export interface ButtonProps extends TouchableOpacityProps {
   label: string;
   variante?: ButtonVariant;
   className?: string;
-  onPress?: () => void;
+  onPress?: () =>  void;
 }
 
 // PASO 3: Mapea cada variante con sus clases de Tailwind correspondiente
