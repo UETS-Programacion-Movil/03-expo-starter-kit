@@ -1,5 +1,4 @@
 import { Tabs } from 'expo-router';
-import { View } from 'react-native';
 import { Home, Palette, Wifi, UtensilsCrossed } from 'lucide-react-native';
 
 export default function TabLayout() {
@@ -27,42 +26,61 @@ export default function TabLayout() {
           fontWeight: '800',
           fontSize: 11,
           textTransform: 'uppercase',
-        }
+        },
       }}
     >
       <Tabs.Screen
         name="index"
         options={{
           title: 'Inicio',
-          tabBarIcon: ({ color, size, focused }) => (
-            <Home size={22} color={focused ? '#0A0A0A' : '#777777'} strokeWidth={focused ? 2.8 : 2} />
+          tabBarIcon: ({ focused }) => (
+            <Home
+              size={22}
+              color={focused ? '#0A0A0A' : '#777777'}
+              strokeWidth={focused ? 2.8 : 2}
+            />
           ),
         }}
       />
+
       <Tabs.Screen
         name="nativewind"
         options={{
           title: 'UI Gallery',
-          tabBarIcon: ({ color, size, focused }) => (
-            <Palette size={22} color={focused ? '#0A0A0A' : '#777777'} strokeWidth={focused ? 2.8 : 2} />
+          tabBarIcon: ({ focused }) => (
+            <Palette
+              size={22}
+              color={focused ? '#0A0A0A' : '#777777'}
+              strokeWidth={focused ? 2.8 : 2}
+            />
           ),
         }}
       />
+
       <Tabs.Screen
         name="tunnel"
         options={{
           title: 'Modo Túnel',
-          tabBarIcon: ({ color, size, focused }) => (
-            <Wifi size={22} color={focused ? '#0A0A0A' : '#777777'} strokeWidth={focused ? 2.8 : 2} />
+          tabBarIcon: ({ focused }) => (
+            <Wifi
+              size={22}
+              color={focused ? '#0A0A0A' : '#777777'}
+              strokeWidth={focused ? 2.8 : 2}
+            />
           ),
         }}
       />
+
       <Tabs.Screen
         name="pedidos"
         options={{
           title: 'Bar Salesiano',
-          tabBarIcon: ({ color, size, focused }) => (
-            <UtensilsCrossed size={22} color={focused ? '#0A0A0A' : '#777777'} strokeWidth={focused ? 2.8 : 2} />
+          tabBarIcon: ({ focused }) => (
+            <UtensilsCrossed
+              size={22}
+              color={focused ? '#0A0A0A' : '#777777'}
+              strokeWidth={focused ? 2.8 : 2}
+            />
           ),
         }}
       />

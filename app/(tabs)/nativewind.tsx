@@ -1,80 +1,203 @@
 import React from 'react';
 import { View, Text, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Palette, Layers, Code, CheckCircle } from 'lucide-react-native';
+import {
+  Smartphone,
+  Layers,
+  Video,
+} from 'lucide-react-native';
+
 import { Card } from '../../components/ui/Card';
-import { Button } from '../../components/ui/Button';
 import { Badge } from '../../components/ui/Badge';
 
-export default function NativeWindScreen() {
+export default function IndexScreen() {
   return (
-    <SafeAreaView className="flex-1 bg-[#FFFDF9]" edges={['top', 'left', 'right']}>
-      <ScrollView className="flex-1" contentContainerClassName="px-5 pt-4 pb-36">
-        {/* Encabezado */}
+    <SafeAreaView
+      className="flex-1 bg-[#FFFDF9]"
+      edges={['top', 'left', 'right']}
+    >
+      <ScrollView
+        className="flex-1"
+        contentContainerClassName="px-5 pt-4 pb-36"
+      >
+        {/* Encabezado Institucional */}
         <View className="mb-6 pb-4 border-b-[3px] border-black">
-          <Badge label="RETO 02 · COMPONENTES Y TIPADO" tone="pink" />
-          <View className="flex-row items-center gap-2 mt-2">
-            <Palette size={26} color="#000" />
-            <Text className="text-3xl font-black text-black uppercase">
-              Galería de Componentes
+          <View className="flex-row items-center justify-between mb-2">
+            <Badge
+              label="SEMANA 03 · EXPO SDK 54"
+              tone="yellow"
+            />
+
+            <Text className="text-xs font-extrabold text-black/70">
+              3° BGU UETS · 2026-2027
             </Text>
           </View>
-          <Text className="text-xs font-bold text-black/70 mt-1">
-            Diseño modular y reutilización de elementos con Tailwind CSS (NativeWind v4).
+
+          <View className="flex-row items-center gap-2 mt-1">
+            <Smartphone size={28} color="#000" />
+
+            <Text className="text-3xl font-black text-black tracking-tight uppercase">
+              Starter-Kit Móvil
+            </Text>
+          </View>
+
+          <Text className="text-sm font-semibold text-black/70 mt-1">
+            Módulo de Aplicaciones Web y Móviles · Unidad Educativa Técnico
+            Salesiano
           </Text>
         </View>
 
-        {/* Enunciado Académico del Reto 02 */}
+        {/* Enunciado Académico Principal */}
         <Card
-          titulo="📘 ENUNCIADO ACADÉMICO · RETO 02 (1.00 PT)"
-          subtitulo="Tipado de variantes y props en components/ui/Button.tsx"
+          titulo="📘 GUÍA DEL ESTUDIANTE · MISIÓN DE LA SEMANA"
+          subtitulo="Lee con atención las instrucciones antes de comenzar a codificar"
           variante="yellow"
         >
           <Text className="text-xs font-bold text-black leading-relaxed mb-3">
-            <Text className="font-bold">Misión:</Text> Abre el archivo <Text className="font-mono text-blue-700 font-bold">components/ui/Button.tsx</Text>. Define el tipo de unión <Text className="font-mono text-pink-700 font-bold">ButtonVariant</Text> con las 4 opciones requeridas: <Text className="font-mono">'primary' | 'secondary' | 'danger' | 'success'</Text>.
+            ¡Bienvenido a tu primera aplicación móvil interactiva! Tu objetivo
+            durante esta semana es completar los 4 retos prácticos modificando
+            el código fuente en VS Code y observando los cambios reflejados en
+            tiempo real.
           </Text>
+
           <View className="bg-white/80 p-3 rounded-lg border-2 border-black gap-1.5">
-            <Text className="font-extrabold text-xs text-black">🔍 Verificación del Reto:</Text>
-            <Text className="text-xs font-medium text-black">1. Mapea los colores de Tailwind en el objeto <Text className="font-mono font-bold">variantStyles</Text>.</Text>
-            <Text className="text-xs font-medium text-black">2. Comprueba que los botones mostrados abajo cambien de color correctamente.</Text>
-            <Text className="text-xs font-medium text-black">3. Corre en tu terminal: <Text className="font-mono font-bold text-blue-700">pnpm run start:02</Text>.</Text>
+            <Text className="font-extrabold text-xs text-black">
+              🎯 Pasos para trabajar en tu taller:
+            </Text>
+
+            <Text className="text-xs font-medium text-black">
+              1. Abre cada pestaña en la barra inferior para ver el enunciado
+              de cada reto.
+            </Text>
+
+            <Text className="text-xs font-medium text-black">
+              2. Resuelve los bloques{' '}
+              <Text className="font-mono font-bold text-pink-600">
+                // TODO:
+              </Text>{' '}
+              en los archivos correspondientes.
+            </Text>
+
+            <Text className="text-xs font-medium text-black">
+              3. Valida en tu terminal con{' '}
+              <Text className="font-mono font-bold text-blue-700">
+                pnpm run start:01
+              </Text>{' '}
+              a{' '}
+              <Text className="font-mono font-bold text-blue-700">
+                04
+              </Text>
+              .
+            </Text>
           </View>
         </Card>
 
-        {/* Catálogo de Botones */}
-        <Card titulo="CATÁLOGO DE BOTONES TÁCTILES" variante="default">
-          <View className="gap-3 mt-2">
-            <Button label="Botón Primario (Amarillo Institucional)" variante="primary" />
-            <Button label="Botón Secundario (Cian)" variante="secondary" />
-            <Button label="Botón de Acción / Peligro" variante="danger" />
-            <Button label="Botón de Éxito Salesiano" variante="success" />
+        {/* Tarjeta de Estado del Taller */}
+        <Card
+          titulo="PONDERACIÓN DE LOS 4 RETOS PRÁCTICOS"
+          subtitulo="Bloque A (50% de la nota total · 4.00 pts de retos + 1.00 pt de calidad)"
+          variante="default"
+        >
+          <View className="gap-2.5 mt-2">
+            <View className="flex-row items-center justify-between bg-white/90 p-2.5 rounded-lg border-2 border-black">
+              <View className="flex-row items-center gap-2">
+                <Layers size={16} color="#000" />
+                <Text className="font-extrabold text-xs text-black">
+                  Reto 01: app.json y Metadatos
+                </Text>
+              </View>
+
+              <Badge label="1.00 pt" tone="cyan" />
+            </View>
+
+            <View className="flex-row items-center justify-between bg-white/90 p-2.5 rounded-lg border-2 border-black">
+              <View className="flex-row items-center gap-2">
+                <Layers size={16} color="#000" />
+                <Text className="font-extrabold text-xs text-black">
+                  Reto 02: Button.tsx y Tipado de Props
+                </Text>
+              </View>
+
+              <Badge label="1.00 pt" tone="pink" />
+            </View>
+
+            <View className="flex-row items-center justify-between bg-white/90 p-2.5 rounded-lg border-2 border-black">
+              <View className="flex-row items-center gap-2">
+                <Layers size={16} color="#000" />
+                <Text className="font-extrabold text-xs text-black">
+                  Reto 03: Diagnóstico Red UETS y useState
+                </Text>
+              </View>
+
+              <Badge label="1.00 pt" tone="green" />
+            </View>
+
+            <View className="flex-row items-center justify-between bg-white/90 p-2.5 rounded-lg border-2 border-black">
+              <View className="flex-row items-center gap-2">
+                <Layers size={16} color="#000" />
+                <Text className="font-extrabold text-xs text-black">
+                  Reto 04: Bar Salesiano con Acumuladores
+                </Text>
+              </View>
+
+              <Badge label="1.00 pt" tone="orange" />
+            </View>
           </View>
         </Card>
 
-        {/* Píldoras e Insignias */}
-        <Card titulo="INSIGNIAS Y ETIQUETAS DE ESTADO" variante="cyan">
-          <View className="flex-row flex-wrap gap-2 mt-2">
-            <Badge label="Expo SDK 54" tone="yellow" />
-            <Badge label="NativeWind v4" tone="green" />
-            <Badge label="TypeScript 5.x" tone="cyan" />
-            <Badge label="Fast Refresh" tone="pink" />
-            <Badge label="3° BGU UETS" tone="orange" />
+        {/* Guía Rápida de Comandos */}
+        <Card
+          titulo="COMANDOS DE VALIDACIÓN EN TERMINAL"
+          subtitulo="Ejecuta estos scripts en tu computadora para comprobar tus respuestas"
+          variante="cyan"
+        >
+          <View className="bg-black p-3 rounded-lg border-2 border-black">
+            <Text className="text-yellow-300 font-mono text-xs font-bold">
+              $ pnpm start
+            </Text>
+
+            <Text className="text-white/60 text-[11px] mt-0.5 font-mono">
+              # Inicia la app en modo túnel para tu celular
+            </Text>
+
+            <Text className="text-emerald-300 font-mono text-xs font-bold mt-2.5">
+              $ pnpm run test:all
+            </Text>
+
+            <Text className="text-white/60 text-[11px] mt-0.5 font-mono">
+              # Ejecuta la suite de pruebas unitarias
+            </Text>
+
+            <Text className="text-pink-300 font-mono text-xs font-bold mt-2.5">
+              $ pnpm run check
+            </Text>
+
+            <Text className="text-white/60 text-[11px] mt-0.5 font-mono">
+              # Verifica 0 errores de TypeScript
+            </Text>
           </View>
         </Card>
 
-        {/* Variaciones de Tarjetas */}
-        <Card titulo="VARIACIONES DE TARJETAS INFORMATIVAS" variante="green">
-          <Text className="text-xs font-bold text-black mb-3">
-            Cada tarjeta cuenta con bordes definidos y esquinas redondeadas para estructurar la información.
+        {/* Recordatorio Evaluativo MIT */}
+        <Card
+          titulo="EVALUACIÓN DUAL MIT (10.0 PUNTOS)"
+          subtitulo="50% Pull Request en GitHub + 50% Screencast de 3 min"
+          variante="pink"
+        >
+          <View className="flex-row items-center gap-2 mb-2">
+            <Video size={18} color="#000" />
+
+            <Text className="text-xs font-black text-black uppercase">
+              Defensa Oral en Video
+            </Text>
+          </View>
+
+          <Text className="text-xs font-bold text-black leading-relaxed">
+            Al terminar tus 4 retos y pasar las pruebas en verde, graba un
+            video de máximo 3 minutos mostrando tu rostro, la terminal con los
+            tests y la app corriendo en tu celular con Expo Go. Pega el enlace
+            en la descripción del Pull Request.
           </Text>
-          <View className="gap-2">
-            <Card titulo="Tarjeta Informativa Rosada" variante="pink">
-              <Text className="text-xs font-semibold text-black">Variante rosada activa para alertas o advertencias.</Text>
-            </Card>
-            <Card titulo="Tarjeta Informativa Naranja" variante="orange">
-              <Text className="text-xs font-semibold text-black">Variante naranja activa para notas de atención.</Text>
-            </Card>
-          </View>
         </Card>
       </ScrollView>
     </SafeAreaView>
