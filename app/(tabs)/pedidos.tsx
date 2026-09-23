@@ -1,37 +1,38 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { UtensilsCrossed, Sandwich, CupSoda, Sparkles, Trash2, ShoppingBag } from 'lucide-react-native';
+import { UtensilsCrossed, Sandwich, CupSoda, Sparkles, ShoppingBag } from 'lucide-react-native';
 import { Card } from '../../components/ui/Card';
 import { Badge } from '../../components/ui/Badge';
 import { Button } from '../../components/ui/Button';
 
 export default function PedidosScreen() {
-  // TODO [RETO 04 - PASO 1]: Declara dos estados simples usando useState:
-  // 1. 'total' para el dinero acumulado (inicializado en 0)
-  // 2. 'items' para la cantidad de productos (inicializado en 0)
-  // const [total, setTotal] = useState(0);
-  // const [items, setItems] = useState(0);
+  // TODO [RETO 04 - PASO 1]: Declara dos estados simples usando useState
+  const [total, setTotal] = useState(0);
+  const [items, setItems] = useState(0);
 
-  // TODO [RETO 04 - PASO 2]: Programa las funciones de suma directa al total y conteo de items:
+  // TODO [RETO 04 - PASO 2]: Programa las funciones de suma directa al total y conteo de items
   const agregarSanduche = () => {
-    // TODO: Sumar 1 a items y sumar 1.25 al total
+    setItems(items + 1);
+    setTotal(total + 1.25);
   };
 
   const agregarEmpanada = () => {
-    // TODO: Sumar 1 a items y sumar 0.75 al total
+    setItems(items + 1);
+    setTotal(total + 0.75);
   };
 
   const agregarJugo = () => {
-    // TODO: Sumar 1 a items y sumar 0.80 al total
+    setItems(items + 1);
+    setTotal(total + 0.80);
   };
 
   const vaciarCarrito = () => {
-    // TODO: Reiniciar total e items a 0
+    setItems(0);
+    setTotal(0);
   };
 
-  const total = 0; // TODO: Conectar con tu estado useState 'total'
-  const items = 0; // TODO: Conectar con tu estado useState 'items'
+  // Variable booleana derivada para el descuento (>= $5.00)
   const tieneDescuento = total >= 5.0;
 
   return (
@@ -58,28 +59,28 @@ export default function PedidosScreen() {
           variante="yellow"
         >
           <Text className="text-xs font-bold text-black leading-relaxed mb-3">
-            <Text className="font-bold">Misión:</Text> Abre este archivo (<Text className="font-mono text-blue-700 font-bold">app/(tabs)/pedidos.tsx</Text>). Declara dos estados con <Text className="font-mono text-pink-700 font-bold">useState(0)</Text>: <Text className="font-mono font-bold">[total, setTotal]</Text> y <Text className="font-mono font-bold">[items, setItems]</Text>.
+            <Text className="font-bold">Misión:</Text> Abre este archivo
           </Text>
           <View className="bg-white/80 p-3 rounded-lg border-2 border-black gap-1.5">
             <Text className="font-extrabold text-xs text-black">🔍 Verificación del Reto:</Text>
-            <Text className="text-xs font-medium text-black">1. Sanduche de Pollo: suma +1 item y +$1.25 al total.</Text>
-            <Text className="text-xs font-medium text-black">2. Empanada de Viento: suma +1 item y +$0.75 al total.</Text>
-            <Text className="text-xs font-medium text-black">3. Jugo Natural: suma +1 item y +$0.80 al total.</Text>
-            <Text className="text-xs font-medium text-black">4. Vaciar Carrito: restablece total e items a 0.</Text>
-            <Text className="text-xs font-medium text-black">5. Corre en tu terminal: <Text className="font-mono font-bold text-blue-700">pnpm run start:04</Text>.</Text>
+            <Text className="text-xs font-medium text-black">1. Sánduche de Pollo: suma +1 item y +$1.25</Text>
+            <Text className="text-xs font-medium text-black">2. Empanada de Viento: suma +1 item y +$0.75</Text>
+            <Text className="text-xs font-medium text-black">3. Jugo Natural: suma +1 item y +$0.80</Text>
+            <Text className="text-xs font-medium text-black">4. Vaciar Carrito: restablece total e items a 0</Text>
+            <Text className="text-xs font-medium text-black">5. Corre en tu terminal: pnpm run start:04</Text>
           </View>
         </Card>
 
-        {/* Menú del Recreo con Iconos Lucide */}
-        <View className="flex-row items-center gap-2 mb-3">
+        {/* Menú del Recreo */}
+        <View className="flex-row items-center gap-2 mb-3 mt-4">
           <ShoppingBag size={20} color="#000" />
           <Text className="text-lg font-black uppercase text-black">
             Menú del Recreo
           </Text>
         </View>
-        
+
         <View className="gap-3 mb-6">
-          {/* Sanduche */}
+          {/* Sánduche */}
           <Card className="p-3.5" variante="default">
             <View className="flex-row items-center justify-between">
               <View className="flex-row items-center gap-3">
@@ -87,14 +88,14 @@ export default function PedidosScreen() {
                   <Sandwich size={22} color="#000" />
                 </View>
                 <View>
-                  <Text className="font-extrabold text-sm text-black">Sanduche de Pollo</Text>
+                  <Text className="font-extrabold text-sm text-black">Sánduche de Pollo</Text>
                   <Text className="text-xs font-bold text-black/60">$1.25</Text>
                 </View>
               </View>
               <TouchableOpacity
                 onPress={agregarSanduche}
                 activeOpacity={0.7}
-                className="bg-yellow-300 border-2 border-black rounded-lg px-3 py-2 shadow-[2px_2px_0px_0px_#000]"
+                className="bg-yellow-300 border-2 border-black rounded-lg px-3 py-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
               >
                 <Text className="font-extrabold text-xs text-black">+ Agregar $1.25</Text>
               </TouchableOpacity>
@@ -116,7 +117,7 @@ export default function PedidosScreen() {
               <TouchableOpacity
                 onPress={agregarEmpanada}
                 activeOpacity={0.7}
-                className="bg-yellow-300 border-2 border-black rounded-lg px-3 py-2 shadow-[2px_2px_0px_0px_#000]"
+                className="bg-yellow-300 border-2 border-black rounded-lg px-3 py-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
               >
                 <Text className="font-extrabold text-xs text-black">+ Agregar $0.75</Text>
               </TouchableOpacity>
@@ -138,7 +139,7 @@ export default function PedidosScreen() {
               <TouchableOpacity
                 onPress={agregarJugo}
                 activeOpacity={0.7}
-                className="bg-yellow-300 border-2 border-black rounded-lg px-3 py-2 shadow-[2px_2px_0px_0px_#000]"
+                className="bg-yellow-300 border-2 border-black rounded-lg px-3 py-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
               >
                 <Text className="font-extrabold text-xs text-black">+ Agregar $0.80</Text>
               </TouchableOpacity>
@@ -154,11 +155,11 @@ export default function PedidosScreen() {
           </View>
           <View className="flex-row justify-between border-t-2 border-black/20 pt-2 mb-2">
             <Text className="font-black text-sm text-black uppercase">Total a Pagar:</Text>
-            <Text className="font-black text-sm text-black">${total}</Text>
+            <Text className="font-black text-sm text-black">${total.toFixed(2)}</Text>
           </View>
 
           {tieneDescuento && (
-            <View className="bg-emerald-300 border-2 border-black p-2 rounded mb-3 flex-row items-center justify-center gap-1.5">
+            <View className="bg-emerald-300 border-2 border-black p-2 rounded mb-3 flex-row items-center justify-center gap-2">
               <Sparkles size={16} color="#000" />
               <Text className="font-extrabold text-xs text-black text-center">
                 ¡Descuento Salesiano del Recreo Activado!
@@ -171,7 +172,7 @@ export default function PedidosScreen() {
               label={items > 0 ? "Confirmar Pedido Móvil" : "Selecciona Productos"}
               variante={items > 0 ? "success" : "secondary"}
               disabled={items === 0}
-              onPress={() => Alert.alert("Bar Salesiano", `¡Pedido confirmado por $${total}! Retíralo en el Bar Salesiano.`)}
+              onPress={() => Alert.alert("Bar Salesiano", `¡Pedido confirmado por $${total.toFixed(2)}!`)}
             />
             {items > 0 && (
               <Button
