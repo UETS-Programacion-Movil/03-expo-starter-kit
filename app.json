@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "",
-    "slug": "",
+    "name": "App Insumo Semana 3",
+    "slug": "app-insumo-semana-3",
     "version": "1.0.0",
     "orientation": "default",
     "icon": "./assets/images/icon.png",
-    "scheme": "",
+    "scheme": "appinsumosemana3",
     "userInterfaceStyle": "light",
     "ios": {
       "supportsTablet": true
@@ -33,9 +33,9 @@
       ]
     ],
     "extra": {
-      "school": "Unidad Educativa Tecnico Salesiano",
-      "module": "Programacion Movil 3 BGU",
-      "teacher": "Ing. Milton Velasquez",
+      "school": "Unidad Educativa Técnico Salesiano",
+      "module": "Programación Móvil 3 BGU",
+      "teacher": "Ing. Milton Velásquez",
       "year": "2026-2027"
     }
   }
