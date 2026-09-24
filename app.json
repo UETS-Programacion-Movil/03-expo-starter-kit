@@ -1,24 +1,19 @@
 {
   "expo": {
-    "name": "",
-    "slug": "",
+    "name": "Bar Salesiano UETS",
+    "slug": "bar-salesiano-uets",
     "version": "1.0.0",
-    "orientation": "default",
+    "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "",
-    "userInterfaceStyle": "light",
+    "scheme": "barsalesiano",
+    "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
-    "splash": {
-      "image": "./assets/images/splash-icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       }
     },
@@ -30,11 +25,13 @@
     "plugins": [
       "expo-router"
     ],
-    "extra": {
-      "school": "Unidad Educativa Tecnico Salesiano",
-      "module": "Programacion Movil 3 BGU",
-      "teacher": "Ing. Milton Velasquez",
-      "year": "2026-2027"
+    "experiments": {
+      "typedRoutes": true
+    },
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FDE047"
     }
   }
 }

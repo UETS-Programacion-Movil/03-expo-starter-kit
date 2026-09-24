@@ -27,7 +27,9 @@ assert(Boolean(expo.name), "app.json contiene 'name'", "Define name en app.json"
 assert(Boolean(expo.slug), "app.json contiene 'slug'", "Define slug en app.json");
 assert(expo.orientation === "portrait", "La orientación está fijada en 'portrait'", "Fija orientation: 'portrait'");
 assert(Boolean(expo.scheme), "app.json define un 'scheme' para navegación nativa", "Define scheme en app.json (ej. 'uetsapp' o 'barsalesiano')");
-assert(Boolean(expo.splash?.image), "app.json contiene imagen de splash screen", "Configura splash.image con ruta válida");
+const splashPlugin = Array.isArray(expo.plugins) && expo.plugins.find((p: any) => Array.isArray(p) && p[0] === "expo-splash-screen");
+const hasSplash = Boolean(expo.splash?.image) || Boolean(splashPlugin && splashPlugin[1]?.image);
+assert(hasSplash, "app.json contiene imagen de splash screen", "Configura splash.image con ruta válida");
 
 console.log("\n-----------------------------------------------------------------");
 if (testsFallidos === 0) {
