@@ -3,7 +3,7 @@ import { TouchableOpacity, Text, TouchableOpacityProps } from 'react-native';
 
 // TODO [RETO 02 - PASO 1]: Define el tipo ButtonVariant con los 4 colores de la UETS:
 // 'primary' | 'secondary' | 'danger' | 'success'
-export type ButtonVariant = 'primary'; // TODO: Reemplaza con la unión de las 4 variantes
+export type ButtonVariant = 'primary' | 'secondary' | 'danger' | 'success'; // TODO: Reemplaza con la unión de las 4 variantes
 
 // TODO [RETO 02 - PASO 2]: Extiende la interfaz ButtonProps con label, variante y onPress usando TouchableOpacityProps
 export interface ButtonProps extends TouchableOpacityProps {
@@ -19,6 +19,10 @@ export interface ButtonProps extends TouchableOpacityProps {
 // - danger: 'bg-pink-400 text-black'
 // - success: 'bg-emerald-300 text-black'
 export const variantStyles: Record<string, string> = {
+  primary: 'bg-yellow-300 text-black',
+  secondary: 'bg-cyan-300 text-black',
+  danger: 'bg-pink-400 text-black',
+  success: 'bg-emerald-300 text-black'
   // TODO: Agrega aquí las 4 variantes de color de la UETS
 };
 
