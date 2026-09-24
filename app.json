@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "",
-    "slug": "",
+    "name": "UETS Mobile App",
+    "slug": "uets-mobile-app",
     "version": "1.0.0",
-    "orientation": "default",
+    "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "",
+    "scheme": "uetsmobile",
     "userInterfaceStyle": "light",
     "ios": {
       "supportsTablet": true
