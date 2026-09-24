@@ -1,20 +1,22 @@
 {
   "expo": {
-    "name": "",
-    "slug": "",
+    "name": "UETS Mobile App",
+    "slug": "uets-mobile-app",
     "version": "1.0.0",
-    "orientation": "default",
+    "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "",
+    "scheme": "uetsmobile",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.uets.mobileapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.uets.mobileapp"
     },
     "web": {
       "bundler": "metro",
