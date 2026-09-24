@@ -7,31 +7,33 @@ import { Badge } from '../../components/ui/Badge';
 import { Button } from '../../components/ui/Button';
 
 export default function PedidosScreen() {
-  // TODO [RETO 04 - PASO 1]: Declara dos estados simples usando useState:
+  // [RETO 04 - PASO 1]: Estados del dinero acumulado y la cantidad de productos.
   // 1. 'total' para el dinero acumulado (inicializado en 0)
   // 2. 'items' para la cantidad de productos (inicializado en 0)
-  // const [total, setTotal] = useState(0);
-  // const [items, setItems] = useState(0);
+  const [total, setTotal] = useState(0);
+  const [items, setItems] = useState(0);
 
-  // TODO [RETO 04 - PASO 2]: Programa las funciones de suma directa al total y conteo de items:
+  // [RETO 04 - PASO 2]: Operaciones reactivas del carrito.
   const agregarSanduche = () => {
-    // TODO: Sumar 1 a items y sumar 1.25 al total
+    setItems((cantidadActual) => cantidadActual + 1);
+    setTotal((totalActual) => totalActual + 1.25);
   };
 
   const agregarEmpanada = () => {
-    // TODO: Sumar 1 a items y sumar 0.75 al total
+    setItems((cantidadActual) => cantidadActual + 1);
+    setTotal((totalActual) => totalActual + 0.75);
   };
 
   const agregarJugo = () => {
-    // TODO: Sumar 1 a items y sumar 0.80 al total
+    setItems((cantidadActual) => cantidadActual + 1);
+    setTotal((totalActual) => totalActual + 0.8);
   };
 
   const vaciarCarrito = () => {
-    // TODO: Reiniciar total e items a 0
+    setTotal(0);
+    setItems(0);
   };
 
-  const total = 0; // TODO: Conectar con tu estado useState 'total'
-  const items = 0; // TODO: Conectar con tu estado useState 'items'
   const tieneDescuento = total >= 5.0;
 
   return (
@@ -58,7 +60,7 @@ export default function PedidosScreen() {
           variante="yellow"
         >
           <Text className="text-xs font-bold text-black leading-relaxed mb-3">
-            <Text className="font-bold">Misión:</Text> Abre este archivo (<Text className="font-mono text-blue-700 font-bold">app/(tabs)/pedidos.tsx</Text>). Declara dos estados con <Text className="font-mono text-pink-700 font-bold">useState(0)</Text>: <Text className="font-mono font-bold">[total, setTotal]</Text> y <Text className="font-mono font-bold">[items, setItems]</Text>.
+            <Text>Misión:</Text> Abre este archivo (<Text className="font-mono text-blue-700 font-bold">app/(tabs)/pedidos.tsx</Text>). Declara dos estados con <Text className="font-mono text-pink-700 font-bold">useState(0)</Text>: <Text className="font-mono font-bold">[total, setTotal]</Text> y <Text className="font-mono font-bold">[items, setItems]</Text>.
           </Text>
           <View className="bg-white/80 p-3 rounded-lg border-2 border-black gap-1.5">
             <Text className="font-extrabold text-xs text-black">🔍 Verificación del Reto:</Text>
@@ -154,7 +156,7 @@ export default function PedidosScreen() {
           </View>
           <View className="flex-row justify-between border-t-2 border-black/20 pt-2 mb-2">
             <Text className="font-black text-sm text-black uppercase">Total a Pagar:</Text>
-            <Text className="font-black text-sm text-black">${total}</Text>
+            <Text className="font-black text-sm text-black">${total.toFixed(2)}</Text>
           </View>
 
           {tieneDescuento && (
@@ -171,7 +173,7 @@ export default function PedidosScreen() {
               label={items > 0 ? "Confirmar Pedido Móvil" : "Selecciona Productos"}
               variante={items > 0 ? "success" : "secondary"}
               disabled={items === 0}
-              onPress={() => Alert.alert("Bar Salesiano", `¡Pedido confirmado por $${total}! Retíralo en el Bar Salesiano.`)}
+              onPress={() => Alert.alert("Bar Salesiano", `¡Pedido confirmado por $${total.toFixed(2)}! Retíralo en el Bar Salesiano.`)}
             />
             {items > 0 && (
               <Button
