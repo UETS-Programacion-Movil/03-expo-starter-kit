@@ -1,12 +1,18 @@
 {
   "expo": {
-    "name": "",
-    "slug": "",
+    "name": "Bar Salesiano - William Ortiz ",
+    "slug": "bar-salesiano-william-ortiz",
     "version": "1.0.0",
-    "orientation": "default",
+    "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "",
+    "scheme": "barsalesianowilliam",
     "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/images/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
     "ios": {
       "supportsTablet": true
     },
@@ -23,14 +29,9 @@
     },
     "plugins": [
       "expo-router",
-      [
-        "expo-splash-screen",
-        {
-          "image": "./assets/images/splash-icon.png",
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
-        }
-      ]
+      "expo-font",
+      "expo-splash-screen",
+      "expo-asset"
     ],
     "extra": {
       "school": "Unidad Educativa Tecnico Salesiano",

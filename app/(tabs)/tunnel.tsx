@@ -7,15 +7,13 @@ import { Badge } from '../../components/ui/Badge';
 import { Button } from '../../components/ui/Button';
 
 export default function TunnelScreen() {
-  // TODO [RETO 03 - PASO 1]: Declara el estado booleano 'tunelActivo' inicializado en false usando useState(false)
-  // const [tunelActivo, setTunelActivo] = useState(false);
+  // [RETO 03 - PASO 1]: Estado booleano del túnel, inicialmente desconectado.
+  const [tunelActivo, setTunelActivo] = useState(false);
 
-  // TODO [RETO 03 - PASO 2]: Programa la función toggleTunel para alternar entre true y false
+  // [RETO 03 - PASO 2]: Alterna el estado y provoca el nuevo renderizado.
   const toggleTunel = () => {
-    // TODO: Alternar el estado tunelActivo llamando a setTunelActivo(!tunelActivo)
+    setTunelActivo(!tunelActivo);
   };
-
-  const tunelActivo = false; // TODO: Conectar con tu estado reactivo useState
 
   return (
     <SafeAreaView className="flex-1 bg-[#FFFDF9]" edges={['top', 'left', 'right']}>
@@ -41,7 +39,7 @@ export default function TunnelScreen() {
           variante="yellow"
         >
           <Text className="text-xs font-bold text-black leading-relaxed mb-3">
-            <Text className="font-bold">Misión:</Text> Abre este archivo (<Text className="font-mono text-blue-700 font-bold">app/(tabs)/tunnel.tsx</Text>). Descomenta y utiliza el hook <Text className="font-mono text-pink-700 font-bold">useState(false)</Text> para crear el estado reactivo <Text className="font-mono font-bold">[tunelActivo, setTunelActivo]</Text>.
+            <Text>Misión:</Text> Abre este archivo (<Text className="font-mono text-blue-700 font-bold">app/(tabs)/tunnel.tsx</Text>). Descomenta y utiliza el hook <Text className="font-mono text-pink-700 font-bold">useState(false)</Text> para crear el estado reactivo <Text className="font-mono font-bold">[tunelActivo, setTunelActivo]</Text>.
           </Text>
           <View className="bg-white/80 p-3 rounded-lg border-2 border-black gap-1.5">
             <Text className="font-extrabold text-xs text-black">🔍 Verificación del Reto:</Text>
