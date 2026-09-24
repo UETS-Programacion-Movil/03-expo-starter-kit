@@ -38,7 +38,7 @@ export default function IndexScreen() {
           <View className="bg-white/80 p-3 rounded-lg border-2 border-black gap-1.5">
             <Text className="font-extrabold text-xs text-black">🎯 Pasos para trabajar en tu taller:</Text>
             <Text className="text-xs font-medium text-black">1. Abre cada pestaña en la barra inferior para ver el enunciado de cada reto.</Text>
-            <Text className="text-xs font-medium text-black">2. Resuelve los bloques <Text className="font-mono font-bold text-pink-600">// TODO:</Text> en los archivos correspondientes.</Text>
+            <Text className="text-xs font-medium text-black">2. Completa los bloques marcados en los archivos correspondientes.</Text>
             <Text className="text-xs font-medium text-black">3. Valida en tu terminal con <Text className="font-mono font-bold text-blue-700">pnpm run start:01</Text> a <Text className="font-mono font-bold text-blue-700">04</Text>.</Text>
           </View>
         </Card>
